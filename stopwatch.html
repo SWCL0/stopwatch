@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="stopwatch">
+        <div id="display"></div>
+        <div class="knoppen">
+            <button onclick="fStop()">Stop</button>
+            <button type="submit" id="start">Start</button>
+
+        </div>
+    </div>
+
+    <script>
+        let sec = 0;
+        let mijnInterval = '';
+        
+        function startTimer() {
+            let mijnInterval = setInterval(secTeller, 1000);
+        }
+
+        function fStop() {
+            clearInterval(mijnInterval)
+        }
+
+        function secTeller() {
+            sec = sec + 1;
+            document.getElementById('display').innerHTML = sec + " sec";
+        }
+
+
+        
+        document.getElementById('start').addEventListener('click', startTimer);
+        
+    </script>
+</body>
+</html>
